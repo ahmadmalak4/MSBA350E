@@ -52,13 +52,13 @@ def display_main_tab():
      st.markdown('<div style="font-size:2.5em;">In these dashboards, we examine <b><span style="color: red;">smoking, alcohol consumption</span></b>, and the utilization of illegal drugs. Our focus is on investigating the individuals who engage in these activities, observing how their usage patterns have evolved over time, and presenting estimations of the effects on their health. We analyze the overall effects of substance use, encompassing both indirect consequences on mortality and the direct repercussions of addiction and overdoses.</div>', unsafe_allow_html=True)
     # Display the image in column 2
     with col2:
-     st.image('/Users/ahmadmalak/Desktop/health care datasets/image.png', width=750)
+     st.image('image.png', width=750)
     
 def display_deaths_tab():
     st.header("Deaths from Substance Use")
 
     # Read the first CSV file
-    df1 = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/1.csv')
+    df1 = pd.read_csv('1.csv')
 
     # Melt the dataframe to make it suitable for the stacked bar chart
     df1_melted = df1.melt(id_vars=['Entity', 'Year'],
@@ -156,7 +156,7 @@ def display_deaths_tab():
     st.plotly_chart(fig1)
 
     # Read the second CSV file
-    df2 = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/2.csv')
+    df2 = pd.read_csv('2.csv')
 
     # Melt the data
     df2_melted = pd.melt(df2, id_vars=['Entity', 'Code', 'Year'],
@@ -196,7 +196,7 @@ def display_deaths_tab():
     st.plotly_chart(fig2, use_container_width=False)
 
     # Load the third CSV file
-    path = '/Users/ahmadmalak/Desktop/health care datasets/3.csv'
+    path = '3.csv'
     df3 = pd.read_csv(path)
 
     # Extract the disease names from the columns
@@ -262,7 +262,7 @@ def display_disorders_tab():
     st.header("Substance Use Disorders Prevalence")
 
     # Read the data for choropleth map
-    choropleth_df = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/4.csv')
+    choropleth_df = pd.read_csv('4.csv')
 
     # Rename the Disorder column
     choropleth_df = choropleth_df.rename(columns={'Prevalence - Substance use disorders - Sex: Both - Age: Age-standardized (Percent)': 'Substance use disorders'})
@@ -289,7 +289,7 @@ def display_disorders_tab():
     st.plotly_chart(choropleth_fig)
 
     # Read the data for vector plot 1
-    vector_df1 = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/5.csv')
+    vector_df1 = pd.read_csv('5.csv')
 
     # Filter data based on selected countries
     selected_countries1 = st.multiselect('Select Countries (Vector Plot 1)', options=vector_df1['Entity'].unique())
@@ -319,7 +319,7 @@ def display_disorders_tab():
     st.plotly_chart(vector_fig1)
 
     # Read the data for vector plot 2
-    vector_df2 = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/6.csv')
+    vector_df2 = pd.read_csv('6.csv')
 
     # Filter data based on selected countries
     selected_countries2 = st.multiselect('Select Countries (Vector Plot 2)', options=vector_df2['Entity'].unique())
@@ -350,7 +350,7 @@ def display_disorders_tab():
    
     
    # Load data
-    data = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/7.csv')
+    data = pd.read_csv('7.csv')
 
     # Clean up column names
     column_names = {
@@ -384,7 +384,7 @@ def display_disorders_tab():
     st.plotly_chart(fig)
     
 # Load data
-    data = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/8.csv')
+    data = pd.read_csv('8.csv')
 
     # Clean up column names
     column_names = {
@@ -415,7 +415,7 @@ def display_disorders_tab():
 
 
         # Load data
-    data = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/9.csv')
+    data = pd.read_csv('9.csv')
 
     # Clean up column names
     column_names = {
@@ -467,7 +467,7 @@ def display_disorders_tab():
     
 
     # Load data
-    data = pd.read_csv('/Users/ahmadmalak/Desktop/health care datasets/10.csv')
+    data = pd.read_csv('10.csv')
 
     # Rename the long column for easier reference
     data.rename(columns={'DALYs (Disability-Adjusted Life Years) - Substance use disorders - Sex: Both - Age: All Ages (Percent)': 'DALYs %'}, inplace=True)
