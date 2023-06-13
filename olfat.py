@@ -42,15 +42,11 @@ def main():
         display_disorders_tab()
 def display_main_tab():
    
-    # Create two columns
-    col1, col2 = st.columns([2, 1])
+  
 
     # Display the text in column 1
-    with col1:
+  
      st.markdown('<div style="font-size:2.5em;">In these dashboards, we examine <b><span style="color: red;">smoking, alcohol consumption</span></b>, and the utilization of illegal drugs. Our focus is on investigating the individuals who engage in these activities, observing how their usage patterns have evolved over time, and presenting estimations of the effects on their health. We analyze the overall effects of substance use, encompassing both indirect consequences on mortality and the direct repercussions of addiction and overdoses.</div>', unsafe_allow_html=True)
-    # Display the image in column 2
-    with col2:
-     st.image('/Users/ahmadmalak/Desktop/health care datasets/image.png', width=750)
     
 def display_deaths_tab():
     st.header("Deaths from Substance Use")
